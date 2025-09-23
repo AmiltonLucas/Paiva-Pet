@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../Assets/Public/logo.PNG";
 
 export default function Login() {
   const COLORS = __COLORS__;
@@ -15,15 +16,15 @@ export default function Login() {
         {/* Logotipo */}
         <div className="text-center mb-6">
           <img
-            src="/logo.png" // Substitua pelo caminho do logotipo
+            src={logo} // Substitua pelo caminho do logotipo
             alt="Logo"
-            className="w-16 h-16 mx-auto"
+            className="w-24 h-24 mx-auto rounded-full object-cover"
           />
           <h1
             className="text-xl font-bold mt-2"
             style={{ color: COLORS.primary }}
           >
-            Bem-vindo ao PetSite
+            Bem-vindo ao Paiva Pet
           </h1>
         </div>
 

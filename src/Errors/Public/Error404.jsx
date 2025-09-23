@@ -7,7 +7,7 @@ export default function Error404() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-4"
-      style={{ backgroundColor: COLORS.secondary }}
+      style={{ backgroundColor: COLORS.secondaryNav }}
     >
       <h1
         className="text-6xl font-bold mb-4"
@@ -26,7 +26,7 @@ export default function Error404() {
         className="px-6 py-2 rounded-lg text-sm font-semibold transition-colors hover:bg-indigo-600"
         style={{
           backgroundColor: COLORS.primary,
-          color: COLORS.text,
+          color: COLORS.white,
         }}
       >
         Voltar para a Página Inicial

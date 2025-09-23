@@ -1,5 +1,5 @@
 import React from "react";
-
+import logo from "../../Assets/Public/logo.PNG";
 export default function Banner() {
   const COLORS = __COLORS__;
 
@@ -11,7 +11,7 @@ export default function Banner() {
       {/* Espaço para a logo centralizada */}
       <div className="flex flex-col items-center">
         <img
-          src="https://placekitten.com/150/150" // Substitua pela URL da logo
+          src={logo} // Substitua pela URL da logo
           alt="Logo"
           className="w-24 h-24 rounded-full object-cover mb-4"
         />

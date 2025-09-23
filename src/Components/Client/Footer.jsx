@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         {/* Logo / Nome */}
         <h2 className="text-lg font-bold mb-2" style={{ color: COLORS.primary }}>
-          🐾 Meu Pet Shop
+          🐾 Paiva Pet - Pet Shop
         </h2>
 
         {/* Links */}
@@ -32,7 +32,7 @@ export default function Footer() {
 
         {/* Direitos Autorais */}
         <p className="text-xs opacity-80">
-          © {new Date().getFullYear()} Meu Pet Shop. Todos os direitos reservados.
+          © {new Date().getFullYear()} Paiva Pet. Todos os direitos reservados.
         </p>
       </div>
     </footer>

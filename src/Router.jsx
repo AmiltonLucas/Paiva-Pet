@@ -19,6 +19,13 @@ import LoginAdminPage from "./Pages/Admin/Login/Login";
 import DashboardAdminPage from "./Pages/Admin/Dashboard/Dashboard";
 import TestPage from "./Test/test";
 import EsqueceuSenhaPage from "./Pages/Client/Login/EsqueceuSenha";
+import ProdutosAdminPage from "./Pages/Admin/Dashboard/Produtos";
+import CadastroProdutoPage from "./Pages/Admin/Dashboard/CadastroProdutos";
+import EditarProdutoPage from "./Pages/Admin/Dashboard/EditarProdutos";
+import CadastroVendaPage from "./Pages/Admin/Dashboard/CadastroVendas";
+import VendasPage from "./Pages/Admin/Dashboard/Vendas";
+import EditarVendaPage from "./Pages/Admin/Dashboard/EditarVendas";
+import FluxoPage from "./Pages/Admin/Dashboard/Fluxo";
 
 function AppRoutes() {
   return (
@@ -49,6 +56,13 @@ function AppRoutes() {
           {/* Rotas Adiministrativa */}
           <Route path="/admin" element={<LoginAdminPage />} />
           <Route path="/admindash" element={<DashboardAdminPage />} />
+          <Route path="/produtos" element={<ProdutosAdminPage />} />
+          <Route path="/vendas" element={<VendasPage />} />
+          <Route path="/fluxo-caixa" element={<FluxoPage />} />
+          <Route path="/cadastro-produto" element={<CadastroProdutoPage />} />
+          <Route path="/cadastro-venda" element={<CadastroVendaPage />} />
+          <Route path="/editar-produto/:id" element={<EditarProdutoPage />} />
+          <Route path="/editar-venda/:id" element={<EditarVendaPage />} />
         </Routes>
       </BrowserRouter>
     </>

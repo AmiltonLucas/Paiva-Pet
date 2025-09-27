@@ -1,182 +1,85 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
-const COLORS = {
-  backprimary: "#F9FAFB",
-  backsecondary: "#FFFFFF",
-  text: "#1F2937",
-  secondarytext: "#6B7280",
-  buttons: "#2563EB",
-  alerts: "#E63946",
-  warnings: "#F6C90E",
-  success: "#10B981",
-  white: "#FFFFFF",
-};
+import {
+  FaUsers,
+  FaBox,
+  FaShoppingCart,
+  FaUserTie,
+  FaPlus,
+  FaEdit,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
+import logo from "../../Assets/Public/logo.PNG"; // Certifique-se de que o caminho está correto
 
 export default function Dashboard() {
   return (
-    <div style={{ backgroundColor: COLORS.backprimary, minHeight: "100vh" }}>
-      {/* Navbar */}
-      <nav
-        className="flex justify-between items-center px-6 py-4 shadow-md"
-        style={{ backgroundColor: COLORS.backsecondary }}
-      >
-        <h1 className="text-xl font-bold" style={{ color: COLORS.text }}>
-          Painel Administrativo
+    <main className="flex-1 p-0">
+      {/* Banner de tela completa responsivo */}
+      <div className="w-full bg-[#F29F05] flex flex-col items-center justify-center mb-8 py-8 sm:py-12">
+        <img
+          src={logo}
+          alt="Logo da Loja"
+          className="max-h-32 sm:max-h-48 w-auto object-contain drop-shadow-xl mb-2 rounded-full"
+        />
+        <h1 className="mt-2 text-xl sm:text-3xl md:text-4xl font-bold text-white drop-shadow-lg text-center">
+          Bem-vindo ao painel da Paiva pet!
         </h1>
-        <div className="flex gap-4">
-          <NavLink
-            to="/"
-            className="text-sm font-medium"
-            style={{ color: COLORS.buttons }}
-          >
-            Voltar para o site
-          </NavLink>
-          <button
-            className="text-sm font-medium"
-            style={{ color: COLORS.alerts }}
-            onClick={() => console.log("Sair")}
-          >
-            Sair
-          </button>
-        </div>
-      </nav>
-
-      {/* Conteúdo Principal */}
-      <div className="px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Cadastrar Produtos */}
-          <div
-            className="p-6 rounded-lg shadow-md"
-            style={{ backgroundColor: COLORS.backsecondary }}
-          >
-            <h2
-              className="text-lg font-bold mb-4"
-              style={{ color: COLORS.text }}
+      </div>
+      {/* Grid adaptável para mobile/desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-8">
+        {/* Produtos */}
+        <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+          <FaBox className="text-[#F29F05] text-3xl mb-2" />
+          <h2 className="font-semibold text-lg mb-4">Produtos</h2>
+          <div className="flex gap-3">
+            <Link
+              to="/cadastro-produto"
+              className="flex items-center gap-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
             >
-              Cadastrar Produtos
-            </h2>
-            <form className="space-y-4">
-              <div>
-                <label
-                  htmlFor="productName"
-                  className="block text-sm font-medium mb-1"
-                  style={{ color: COLORS.secondarytext }}
-                >
-                  Nome do Produto
-                </label>
-                <input
-                  id="productName"
-                  type="text"
-                  placeholder="Digite o nome do produto"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
-                  style={{ borderColor: COLORS.buttons }}
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="productPrice"
-                  className="block text-sm font-medium mb-1"
-                  style={{ color: COLORS.secondarytext }}
-                >
-                  Preço
-                </label>
-                <input
-                  id="productPrice"
-                  type="number"
-                  placeholder="Digite o preço"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
-                  style={{ borderColor: COLORS.buttons }}
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="productImage"
-                  className="block text-sm font-medium mb-1"
-                  style={{ color: COLORS.secondarytext }}
-                >
-                  URL da Imagem
-                </label>
-                <input
-                  id="productImage"
-                  type="text"
-                  placeholder="Digite a URL da imagem"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
-                  style={{ borderColor: COLORS.buttons }}
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full py-2 font-semibold rounded-lg cursor-pointer hover"
-                style={{
-                  backgroundColor: COLORS.buttons,
-                  color: COLORS.white,
-                }}
-              >
-                Cadastrar Produto
-              </button>
-            </form>
-          </div>
-
-          {/* Fluxo de Caixa */}
-          <div
-            className="p-6 rounded-lg shadow-md"
-            style={{ backgroundColor: COLORS.backsecondary }}
-          >
-            <h2
-              className="text-lg font-bold mb-4"
-              style={{ color: COLORS.text }}
+              <FaPlus /> Adicionar
+            </Link>
+            <Link
+              to="/produtos"
+              className="flex items-center gap-1 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
             >
-              Fluxo de caixa dos últimos 30 dias
-            </h2>
-            <div className="space-y-4">
-              <div className="flex justify-between">
-                <span style={{ color: COLORS.secondarytext }}>Entradas</span>
-                <span style={{ color: COLORS.success }}>R$ 10.000,00</span>
-              </div>
-              <div className="flex justify-between">
-                <span style={{ color: COLORS.secondarytext }}>Saídas</span>
-                <span style={{ color: COLORS.alerts }}>R$ 4.000,00</span>
-              </div>
-              <div className="flex justify-between font-bold">
-                <span style={{ color: COLORS.text }}>Saldo</span>
-                <span style={{ color: COLORS.success }}>R$ 6.000,00</span>
-              </div>
-            </div>
+              <FaEdit /> Modificar
+            </Link>
           </div>
         </div>
 
-        {/* Algo a mais: Relatório de Atividades */}
-        <div
-          className="mt-8 p-6 rounded-lg shadow-md"
-          style={{ backgroundColor: COLORS.backsecondary }}
-        >
-          <h2 className="text-lg font-bold mb-4" style={{ color: COLORS.text }}>
-            Relatório de Atividades
-          </h2>
-          <ul className="space-y-2">
-            <li style={{ color: COLORS.secondarytext }}>
-              - Produto "Ração Premium" cadastrado com sucesso.
-            </li>
-            <li style={{ color: COLORS.secondarytext }}>
-              - Entrada de R$ 2.000,00 registrada.
-            </li>
-            <li style={{ color: COLORS.secondarytext }}>
-              - Saída de R$ 500,00 registrada.
-            </li>
-          </ul>
+        {/* Vendas */}
+        <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+          <FaShoppingCart className="text-[#F29F05] text-3xl mb-2" />
+          <h2 className="font-semibold text-lg mb-4">Vendas</h2>
+          <div className="flex gap-3">
+            <Link
+              to="/cadastro-venda"
+              className="flex items-center gap-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+            >
+              <FaPlus /> Adicionar
+            </Link>
+            <Link
+              to="/vendas"
+              className="flex items-center gap-1 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+            >
+              <FaEdit /> Modificar
+            </Link>
+          </div>
+        </div>
+
+        {/* Fluxo */}
+        <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+          <FaUserTie className="text-[#F29F05] text-3xl mb-2" />
+          <h2 className="font-semibold text-lg mb-4">Fluxo de caixa</h2>
+          <div className="flex gap-3">
+            <Link
+              to="/fluxo-caixa"
+              className="flex items-center gap-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+            >
+               Ver mais
+            </Link>
+          </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer
-        className="py-4 text-center"
-        style={{ backgroundColor: COLORS.backsecondary }}
-      >
-        <p className="text-sm" style={{ color: COLORS.secondarytext }}>
-          © 2025 Front Dev Studio. Todos os direitos reservados.
-        </p>
-      </footer>
-    </div>
+    </main>
   );
 }

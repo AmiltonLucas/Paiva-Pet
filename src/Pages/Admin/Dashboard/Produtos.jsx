@@ -1,12 +1,11 @@
 import React from "react";
 import SidebarMenu from "../../../Components/Admin/SidebarMenu";
-import Dashboard from "../../../Components/Admin/Dashboard";
+import ProdutosAdmin from "../../../Components/Admin/Produtos";
 
-export default function DashboardAdminPage() {
+export default function ProdutosAdminPage() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-white">
-      <SidebarMenu />
-      <Dashboard />
+      <ProdutosAdmin/>
     </div>
   );
 }

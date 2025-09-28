@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ConfirmacaoPagamento() {
 const COLORS = __COLORS__;
+  const navigate = useNavigate();
 
   const cartItems = [
     {
@@ -40,6 +42,7 @@ const COLORS = __COLORS__;
     console.log("Forma de pagamento:", paymentMethod);
     console.log("Opção de entrega:", deliveryOption);
     console.log("Endereço de entrega:", deliveryAddress);
+    navigate('/pedido-finalizado');
     // Aqui você pode adicionar a lógica para processar o pagamento e o pedido
   };
 
@@ -178,12 +181,13 @@ const COLORS = __COLORS__;
 
       {/* Botão Confirmar */}
       <button
-        onClick={handleConfirmPayment}
-        className="w-full py-2 font-semibold rounded-lg transition-colors hover:bg-indigo-600"
-        style={{ backgroundColor: COLORS.primary, color: COLORS.white }}
-      >
-        Confirmar pedido
-      </button>
+      onClick={handleConfirmPayment}
+      use
+      className="w-full py-2 font-semibold rounded-lg transition-colors hover:bg-indigo-600"
+      style={{ backgroundColor: COLORS.primary, color: COLORS.white }}
+    >
+      Confirmar pedido
+    </button>
     </div>
   );
 }

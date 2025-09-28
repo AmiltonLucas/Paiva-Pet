@@ -52,16 +52,10 @@ export default function Dashboard() {
           <h2 className="font-semibold text-lg mb-4">Vendas</h2>
           <div className="flex gap-3">
             <Link
-              to="/cadastro-venda"
-              className="flex items-center gap-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-            >
-              <FaPlus /> Adicionar
-            </Link>
-            <Link
               to="/vendas"
               className="flex items-center gap-1 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
             >
-              <FaEdit /> Modificar
+              <FaEdit /> Ver mais
             </Link>
           </div>
         </div>
@@ -73,9 +67,9 @@ export default function Dashboard() {
           <div className="flex gap-3">
             <Link
               to="/fluxo-caixa"
-              className="flex items-center gap-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+              className="flex items-center gap-1 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
             >
-               Ver mais
+              <FaEdit /> Ver mais
             </Link>
           </div>
         </div>

@@ -14,22 +14,6 @@ export default function Footer() {
           🐾 Paiva Pet - Pet Shop
         </h2>
 
-        {/* Links */}
-        <nav className="flex flex-wrap justify-center gap-6 text-sm mb-4">
-          <a href="#home" className="hover:underline">
-            Início
-          </a>
-          <a href="#services" className="hover:underline">
-            Serviços
-          </a>
-          <a href="#products" className="hover:underline">
-            Produtos
-          </a>
-          <a href="#contact" className="hover:underline">
-            Contato
-          </a>
-        </nav>
-
         {/* Direitos Autorais */}
         <p className="text-xs opacity-80">
           © {new Date().getFullYear()} Paiva Pet. Todos os direitos reservados.

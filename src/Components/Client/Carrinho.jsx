@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Carrinho() {
   const COLORS = __COLORS__;
+    const navigate = useNavigate();
 
   const [cartItems, setCartItems] = useState([
     {
@@ -119,11 +121,12 @@ export default function Carrinho() {
               R$ {total.toFixed(2)}
             </p>
             <button
-              className="w-full mt-4 py-2 font-semibold rounded-lg transition-colors hover:bg-indigo-600"
-              style={{ backgroundColor: COLORS.primary, color: COLORS.white }}
-            >
-              Finalizar Compra
-            </button>
+             className="w-full mt-4 py-2 font-semibold rounded-lg transition-colors hover:bg-indigo-600"
+             style={{ backgroundColor: COLORS.primary, color: COLORS.white }}
+             onClick={() => navigate("/Confirmacao-pagamento")}
+              >
+               Finalizar Compra
+    </button>
           </div>
         </div>
       ) : (

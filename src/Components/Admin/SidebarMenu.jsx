@@ -24,7 +24,7 @@ export default function SidebarMenu() {
       </div>
       <nav className="flex flex-col gap-4 w-full">
         <a
-          href="/admin"
+          href="/admindash"
           className="flex items-center gap-2 text-[#F29F05] font-semibold  hover:text-blue-500 hover:underline"
         >
           <FaGlobe /> Voltar ao painel
@@ -61,7 +61,7 @@ export default function SidebarMenu() {
       {/* Menu mobile */}
       <div className="md:hidden w-full">
         <button
-          className="fixed top-4 left-4 z-50 bg-white rounded-full shadow p-2"
+          className="absolute top-4 left-4 z-50 bg-white rounded-full shadow p-2"
           onClick={() => setOpen(!open)}
         >
           {open ? (
@@ -72,12 +72,12 @@ export default function SidebarMenu() {
         </button>
         {open && (
           <div
-            className="fixed inset-0 bg-transparent z-40"
+            className="absolute inset-0 bg-transparent z-40"
             onClick={() => setOpen(false)}
           ></div>
         )}
         <aside
-          className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg flex flex-col items-center py-8 px-4 z-50 transition-transform duration-300 ${
+          className={`absolute top-0 left-0 h-full w-64 bg-white shadow-lg flex flex-col items-center py-8 px-4 z-50 transition-transform duration-300 ${
             open ? "translate-x-0" : "-translate-x-full"
           }`}
         >

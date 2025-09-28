@@ -1,14 +1,27 @@
-import React from "react";
+
+import React, { useState } from "react";
+import ModalAlterarEndereco from "./ModalAlterarEndereco";
+
 
 export default function Perfil() {
   const COLORS = __COLORS__;
-
-  const user = {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [user, setUser] = useState({
     name: "João Silva",
     email: "joao.silva@email.com",
     savedItems: ["Produto 1", "Produto 2", "Produto 3"],
     address: "Rua Exemplo, 123, Bairro, Cidade, Estado",
-  };
+    endereco: {
+      nome: "João Silva",
+      estado: "SP",
+      cidade: "São Paulo",
+      bairro: "Centro",
+      rua: "Rua Exemplo",
+      numero: "123",
+      complemento: "",
+      telefone: "11999999999",
+    },
+  });
 
   const handleLogout = () => {
     // Lógica para sair da conta
@@ -21,8 +34,18 @@ export default function Perfil() {
   };
 
   const handleEditAddress = () => {
-    // Lógica para editar endereço
-    console.log("Editar endereço");
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => setIsModalOpen(false);
+
+  const handleSubmitEndereco = (novoEndereco) => {
+    setUser((prev) => ({
+      ...prev,
+      endereco: novoEndereco,
+      address: `${novoEndereco.rua}, ${novoEndereco.numero}, ${novoEndereco.bairro}, ${novoEndereco.cidade}, ${novoEndereco.estado}`
+    }));
+    setIsModalOpen(false);
   };
 
   return (
@@ -77,6 +100,13 @@ export default function Perfil() {
           >
             Editar endereço
           </button>
+          {/* Modal para alterar endereço */}
+          <ModalAlterarEndereco
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            onSubmit={handleSubmitEndereco}
+            enderecoAtual={user.endereco}
+          />
         </div>
 
         {/* Ações */}

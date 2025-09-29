@@ -1,8 +1,11 @@
 import React from "react";
 import logo from "../../Assets/Public/logo.PNG";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const COLORS = __COLORS__;
+useNavigate();
+  const navigate = useNavigate();   
 
   return (
     <div
@@ -76,6 +79,7 @@ export default function Login() {
             type="submit"
             className="w-full py-2 font-semibold rounded-lg transition-colors hover:bg-indigo-600"
             style={{ backgroundColor: COLORS.primary, color: COLORS.white }}
+             onClick={() => navigate("/")}
           >
             Entrar
           </button>

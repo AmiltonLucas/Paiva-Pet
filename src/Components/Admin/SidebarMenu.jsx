@@ -25,23 +25,24 @@ export default function SidebarMenu() {
       <nav className="flex flex-col gap-4 w-full">
         <a
           href="/admindash"
-          className="flex items-center gap-2 text-[#F29F05] font-semibold  hover:text-blue-500 hover:underline"
+          className="flex items-center gap-2 text-[#F29F05] font-semibold  hover:text-blue-500 hover:underline cursor-pointer"
         >
           <FaGlobe /> Voltar ao painel
         </a>
         <a
           href="/"
-          className="flex items-center gap-2 text-[#F29F05]  hover:text-blue-500 hover:underline"
+          className="flex items-center gap-2 text-[#F29F05]  hover:text-blue-500 hover:underline cursor-pointer"
         >
           <FaGlobe /> Ir para o site
         </a>
         <button
-          className="flex items-center gap-2 text-[#F29F05] hover:text-blue-500 hover:underline"
+          className="flex items-center gap-2 text-[#F29F05] hover:text-blue-500 hover:underline cursor-pointer"
           onClick={() => navigate("/alterar-senha")}
         >
           <FaKey /> Alterar senha
         </button>
-        <button className="flex items-center gap-2 text-red-500 hover:underline mt-8">
+        <button className="flex items-center gap-2 text-red-500 hover:underline mt-8 cursor-pointer"
+         onClick={() => navigate("/")}>
           <FaSignOutAlt /> Encerrar sessão
         </button>
       </nav>

@@ -1,11 +1,12 @@
-
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ importado aqui
 import ModalAlterarEndereco from "./ModalAlterarEndereco";
-
 
 export default function Perfil() {
   const COLORS = __COLORS__;
+  const navigate = useNavigate(); // ✅ hook do react-router-dom
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [user, setUser] = useState({
     name: "João Silva",
     email: "joao.silva@email.com",
@@ -24,13 +25,12 @@ export default function Perfil() {
   });
 
   const handleLogout = () => {
-    // Lógica para sair da conta
     console.log("Usuário deslogado");
+    navigate("/"); // ✅ redireciona para a home
   };
 
   const handleChangePassword = () => {
-    // Lógica para trocar senha
-    console.log("Trocar senha");
+    navigate("/trocar-senha"); // ✅ redireciona para a tela de trocar senha
   };
 
   const handleEditAddress = () => {
@@ -111,21 +111,21 @@ export default function Perfil() {
 
         {/* Ações */}
         <div className="space-y-4">
-          <button
-            onClick={handleChangePassword}
-            className="w-full py-2 font-semibold rounded-lg transition-colors hover:bg-indigo-600"
-            style={{ backgroundColor: COLORS.primary, color: COLORS.white }}
-          >
-            Trocar Senha
-          </button>
-          <button
-            onClick={handleLogout}
-            className="w-full py-2 font-semibold rounded-lg transition-colors hover:bg-red-600"
-            style={{ backgroundColor: "#EF4444", color: COLORS.white }}
-          >
-            Sair da Conta
-          </button>
-        </div>
+      <button
+        onClick={handleChangePassword}
+        className="w-full py-2 font-semibold rounded-lg transition-colors hover:bg-indigo-600"
+        style={{ backgroundColor: COLORS.primary, color: COLORS.white }}
+      >
+        Trocar Senha
+      </button>
+      <button
+        onClick={handleLogout}
+        className="w-full py-2 font-semibold rounded-lg transition-colors hover:bg-red-600"
+        style={{ backgroundColor: "#EF4444", color: COLORS.white }}
+      >
+        Sair da Conta
+      </button>
+    </div>
       </div>
     </div>
   );

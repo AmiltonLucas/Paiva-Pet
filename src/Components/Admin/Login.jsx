@@ -25,7 +25,7 @@ export default function LoginAdmin() {
     setTimeout(() => {
       if (email === "admin@petsite.com" && password === "admin123") {
         setLoading(false);
-        // window.location.href = "/admin/dashboard";
+        window.location.href = "/admindash";
       } else {
         setError("Credenciais inválidas. Tente novamente.");
         setLoading(false);

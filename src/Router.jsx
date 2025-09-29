@@ -25,6 +25,7 @@ import EditarProdutoPage from "./Pages/Admin/Dashboard/EditarProdutos";
 import VendasPage from "./Pages/Admin/Dashboard/Vendas";
 import FluxoPage from "./Pages/Admin/Dashboard/Fluxo";
 import AlterarSenhaAdminPage from "./Pages/Admin/Dashboard/AlterarSenha";
+import TrocarSenhaPage from "./Pages/Client/Login/TrocarSenha";
 
 function AppRoutes() {
   return (
@@ -50,6 +51,7 @@ function AppRoutes() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/registre-se" element={<RegisterPage />} />
           <Route path="/esqueceu-senha" element={<EsqueceuSenhaPage />} />
+          <Route path="/trocar-senha" element={<TrocarSenhaPage />} />
           <Route path="/test" element={<TestPage />} />
 
           {/* Rotas Adiministrativa */}
